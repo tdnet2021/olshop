@@ -18,6 +18,8 @@ class CreateCitiesTable extends Migration
             $table->unsignedBigInteger('code');
             $table->string('title');
             $table->unsignedBigInteger('province_code');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
