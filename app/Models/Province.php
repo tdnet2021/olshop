@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,4 +12,9 @@ class Province extends Model
     protected $fillable = [
         'code','title'
     ];
+
+    public function city()
+    {
+        return $this->hasMany(city::class,'province_code');
+    }
 }
